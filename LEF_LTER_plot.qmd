@@ -1,0 +1,22 @@
+---
+title: "LEF LTER Plot"
+format: html
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+library(janitor)
+```
+
+```{r}
+PRM_data <- read_csv("/courses/EDS214/group_project/A1/LEF_data/RioMameyesPuenteRoto.csv")
+BQ1_data <- read_csv("/courses/EDS214/group_project/A1/LEF_data/QuebradaCuenca1-Bisley.csv")
+BQ2_data <- read_csv("/courses/EDS214/group_project/A1/LEF_data/QuebradaCuenca2-Bisley.csv")
+BQ3_data <- read_csv("/courses/EDS214/group_project/A1/LEF_data/QuebradaCuenca3-Bisley.csv")
+```
+
+```{r}
+all_data <- full_join(PRM_data, BQ1_data, by = "Sample_Date")
+```
+
