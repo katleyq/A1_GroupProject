@@ -20,3 +20,16 @@ BQ3_data <- read_csv("/courses/EDS214/group_project/A1/LEF_data/QuebradaCuenca3-
 all_data <- rbind(BQ2_data, BQ3_data, BQ1_data, PRM_data)
 ```
 
+```{r}
+tidy_data <- all_data %>%
+  select(Sample_Date, K, `NO3-N`, Sample_ID) %>%
+  clean_names() %>%
+  pivot_longer(cols = c(k, no3_n), names_to = "chemical", values_to = "measurement")
+```
+
+```{r}
+ggplot(data = tidy_data, aes(x = sample_date, y = measurement, color = sample_id)) +
+  geom_line() +
+  facet_wrap(~chemical, scales = "free_y", nrow = 2)
+```
+
