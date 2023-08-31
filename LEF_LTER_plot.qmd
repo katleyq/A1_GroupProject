@@ -2,6 +2,8 @@
 title: "LEF LTER Plot"
 format: html
 editor: visual
+execute: 
+  warning: FALSE
 ---
 
 ```{r}
@@ -24,15 +26,23 @@ all_data <- rbind(BQ2_data, BQ3_data, BQ1_data, PRM_data)
 tidy_data <- all_data %>%
   select(Sample_Date, K, `NO3-N`, Sample_ID) %>%
   clean_names() %>%
-  pivot_longer(cols = c(k, no3_n), names_to = "chemical", values_to = "measurement")
+  filter(sample_date > '1988-01-01' & sample_date < '1995-12-31') %>% 
+  mutate(year = year(sample_date), 
+         month = month(sample_date)) %>%
+  pivot_longer(cols = c(k, no3_n), names_to = "chemical", values_to = "measurement") %>% 
+  group_by(chemical, sample_id, year, month) %>% 
+  summarise(sample_date = sample_date,
+            mean_measurement = mean(measurement, na.rm = TRUE))
 ```
 
 ```{r}
-ggplot(data = tidy_data, aes(x = sample_date, y = measurement, color = sample_id)) +
+ggplot(data = tidy_data, aes(x = sample_date, y = mean_measurement, color = sample_id)) +
   geom_line() +
   facet_wrap(~chemical,
-             labeller = as_labeller(c(k =" K (mg/L)", no3_n = "N03-N (ug/L)")) ,
-             scales = "free_y", nrow = 2,
+             labeller = as_labeller(c(k =" K (mg/L)",
+                                      no3_n = "N03-N (ug/L)")) ,
+             scales = "free_y", 
+             nrow = 2,
              strip.position = "left") +
   ylab(NULL) +
   theme_minimal()+
