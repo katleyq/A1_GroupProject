@@ -30,5 +30,16 @@ tidy_data <- all_data %>%
 ```{r}
 ggplot(data = tidy_data, aes(x = sample_date, y = measurement, color = sample_id)) +
   geom_line() +
-  facet_wrap(~chemical, scales = "free_y", nrow = 2)
+  facet_wrap(~chemical,
+             labeller = as_labeller(c(k =" K (mg/L)", no3_n = "N03-N (ug/L)")) ,
+             scales = "free_y", nrow = 2,
+             strip.position = "left") +
+  ylab(NULL) +
+  theme_minimal()+
+  theme(strip.background = element_blank(),
+        strip.placement = "outside") +
+  labs(x = "Year", 
+       subtitle = "Potassium and Nitrate concentrations in stream water over time", 
+       title = "Luquillo Mountains: Streamwater Chemistry",
+       color = "Site")
 ```
