@@ -36,8 +36,10 @@ tidy_data <- all_data %>%
 ```
 
 ```{r}
-ggplot(data = tidy_data, aes(x = year_month, y = mean_measurement, color = sample_id)) +
+lef_graph <- ggplot(data = tidy_data, aes(x = year_month, y = mean_measurement, color = sample_id)) +
   geom_line() +
+  geom_vline(xintercept = as.numeric(tidy_data$year_month[1989-08-01]), linetype = "dotted", color = "black") +
+
   facet_wrap(~chemical,
              labeller = as_labeller(c(k =" K (mg/L)",
                                       no3_n = "N03-N (ug/L)")) ,
@@ -48,9 +50,10 @@ ggplot(data = tidy_data, aes(x = year_month, y = mean_measurement, color = sampl
   theme_minimal()+
   theme(strip.background = element_blank(),
         strip.placement = "outside") +
-  scale_color_paletteer_d(palette = "nationalparkcolors::Redwoods")  +
+  scale_color_paletteer_d(palette = "ggthemes::colorblind")  +
   labs(x = "Year", 
        subtitle = "Potassium and Nitrate concentrations in stream water over time", 
        title = "Luquillo Mountains: Streamwater Chemistry",
        color = "Site") 
+lef_graph
 ```
