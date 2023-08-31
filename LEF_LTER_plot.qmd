@@ -9,6 +9,8 @@ execute:
 ```{r}
 library(tidyverse)
 library(janitor)
+library(patchwork)
+library(paletteer)
 ```
 
 ```{r}
@@ -46,8 +48,9 @@ ggplot(data = tidy_data, aes(x = year_month, y = mean_measurement, color = sampl
   theme_minimal()+
   theme(strip.background = element_blank(),
         strip.placement = "outside") +
+  scale_color_paletteer_d(palette = "nationalparkcolors::Redwoods")  +
   labs(x = "Year", 
        subtitle = "Potassium and Nitrate concentrations in stream water over time", 
        title = "Luquillo Mountains: Streamwater Chemistry",
-       color = "Site")
+       color = "Site") 
 ```
