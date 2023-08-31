@@ -13,3 +13,38 @@ library(janitor)
 
 rain_data <- read_csv("/courses/EDS214/group_project/A1/RainCollector-Bisley2.csv") 
 ```
+
+```{r}
+
+```
+
+```{r}
+tidy_rain <- rain_data |>
+  select(Sample_Date, K, `NO3-N`, Sample_ID) |> 
+  clean_names() |> 
+  filter(sample_date > '1988-01-01' & sample_date < '1995-12-31') %>% 
+  mutate(year_month = ym(format(as.Date(sample_date), "%Y-%m"))) %>%
+  pivot_longer(cols = c(k, no3_n), names_to = "chemical", values_to = "measurement") %>% 
+  group_by(chemical, sample_id, year_month) %>% 
+  summarise(mean_measurement = mean(measurement, na.rm = TRUE))
+```
+
+```{r}
+ggplot(data = tidy_rain, aes(x = year_month, y = mean_measurement, color = sample_id)) +
+  geom_line() +
+  facet_wrap(~chemical,
+             labeller = as_labeller(c(k =" K (mg/L)",
+                                      no3_n = "N03-N (ug/L)")) ,
+             scales = "free_y", 
+             nrow = 2,
+             strip.position = "left") +
+  ylab(NULL) +
+  theme_minimal()+
+  theme(strip.background = element_blank(),
+        strip.placement = "outside") 
+#+
+  # labs(x = "Year", 
+  #      subtitle = "Potassium and Nitrate concentrations in stream water over time", 
+  #      title = "Luquillo Mountains: Streamwater Chemistry",
+  #      color = "Site")
+```
