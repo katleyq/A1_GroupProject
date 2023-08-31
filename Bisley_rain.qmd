@@ -11,5 +11,5 @@ library(janitor)
 
 ```{r}
 
-rain_data <- read_csv("/courses/EDS214/group_project/A1/BasicFieldData-Rain2.csv") 
+rain_data <- read_csv("/courses/EDS214/group_project/A1/RainCollector-Bisley2.csv") 
 ```
