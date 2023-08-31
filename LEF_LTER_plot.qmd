@@ -32,4 +32,3 @@ ggplot(data = tidy_data, aes(x = sample_date, y = measurement, color = sample_id
   geom_line() +
   facet_wrap(~chemical, scales = "free_y", nrow = 2)
 ```
-
