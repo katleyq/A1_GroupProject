@@ -38,7 +38,7 @@ tidy_data <- all_data %>%
 ```{r}
 lef_graph <- ggplot(data = tidy_data, aes(x = year_month, y = mean_measurement, color = sample_id)) +
   geom_line() +
-  geom_vline(xintercept = as.numeric(tidy_data$year_month[1989-08-01]), linetype = "dotted", color = "black") +
+  geom_vline(xintercept = as.Date("1989-09-18"), linetype = "dotted", color = "black") +
 
   facet_wrap(~chemical,
              labeller = as_labeller(c(k =" K (mg/L)",
