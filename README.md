@@ -7,7 +7,7 @@
 
 Part 1: We recreated the LEF LTER Stream Water Chemistry plot with updated data recordings.
 
-Part 2: We used Bisley precipitation data to compare to Luquillo Mountain stream water chemistry data.
+Part 2: We analyzed Bisley precipitation data and compared it to Luquillo Mountain stream water chemistry data.
 
 ## Group Project Set Up
 
@@ -27,7 +27,7 @@ LEF LTER Stream Water Data: https://portal.edirepository.org/nis/mapbrowse?packa
 Bisley Precipitation Data: https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-luq.174.2110860
 
 ### Stored on Taylor
-File path: /courses/EDS214/group_project/A1/
+Shared drive file path: /courses/EDS214/group_project/A1/
 
 ### Session Information
 ``` {r}
@@ -69,3 +69,7 @@ loaded via a namespace (and not attached):
 Schaefer, Douglas. A. et al. “Effects of Hurricane Disturbance on Stream Water Concentrations and Fluxes in Eight Tropical Forest Watersheds of the Luquillo Experimental Forest, Puerto Rico.” Journal of tropical ecology 16.2 (2000): 189–207. Web.
 
 Schellekens, J. “Hydrological Processes in a Humid Tropical Rain Forest: a Combined Experimental and Modelling Approach.” VU, 2000. Print.
+
+
+## Acknowledgements
+Shout out to Dr. Julien Brun for a fun week of reproducibility! 
