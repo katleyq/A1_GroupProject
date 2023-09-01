@@ -57,7 +57,7 @@ rain_graph
 lef_rain_patchwork <- (lef_graph / rain_graph)
 lef_rain_patchwork
 
-ggsave(filename = "lef_rain_patchwork.png", width = 12, height = 10)
+ggsave(filename = "lef_rain_patchwork.png", width = 9, height = 7)
 ```
 
 ![](https://taylor.bren.ucsb.edu/s/19b47d4ef18d135774478/chunk_output/F3E83E8135774478/2DAEBEAC/c3ymoorq5rm76/000056.png)
