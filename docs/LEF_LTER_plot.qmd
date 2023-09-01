@@ -48,7 +48,6 @@ tidy_data <- all_data %>%
 
 ```{r}
 lef_graph <- ggplot(data = tidy_data, aes(x = year_month, y = mean_measurement, color = sample_id)) +
-<<<<<<< HEAD:LEF_LTER_plot.qmd
   geom_line() + #line plot
   geom_vline(xintercept = as.Date("1989-09-18"), linetype = "dotted", color = "black") + #vert. line indicating when there was a hurricane
   facet_wrap(~chemical, #putting each chemical on their own plot
@@ -62,24 +61,6 @@ lef_graph <- ggplot(data = tidy_data, aes(x = year_month, y = mean_measurement, 
   theme(strip.background = element_blank(), #makes y-axis label background blank
         strip.placement = "outside") + #y-axis outside of plot area
   scale_color_paletteer_d(palette = "ggthemes::colorblind")  + #color blind friendly theme
-=======
-  geom_line() +
-  geom_vline(xintercept = as.Date("1989-09-18"), linetype = "dotted", color = "black") +
-  theme_bw() +
-  #theme_linedraw()+
-
-  facet_wrap(~chemical,
-             labeller = as_labeller(c(k =" K (mg/L)",
-                                      no3_n = "N03-N (ug/L)")) ,
-             scales = "free_y", 
-             nrow = 2,
-             strip.position = "left") +
-  ylab(NULL) +
-  theme(strip.background = element_blank(),
-        strip.placement = "outside") +
-  scale_color_paletteer_d(palette = "ggthemes::colorblind",
-                          labels = c("PRM", "BQ1", "BQ2", "BQ3"))  +
->>>>>>> main:docs/LEF_LTER_plot.qmd
   labs(x = "Year", 
        subtitle = "Potassium and Nitrate concentrations in stream water over time", 
        title = "Luquillo Mountains: Streamwater Chemistry",
