@@ -55,6 +55,7 @@ rain_graph
 
 ```{r}
 lef_rain_patchwork <- (lef_graph / rain_graph)
+#+ plot_layout(guides = "collect")
 lef_rain_patchwork
 
 ggsave(filename = "lef_rain_patchwork.png", width = 9, height = 7)
