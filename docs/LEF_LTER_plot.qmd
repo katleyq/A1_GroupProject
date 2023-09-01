@@ -1,5 +1,5 @@
 ---
-title: "LEF LTER Plot"
+title: "LEF LTER Streamwater and Rainfall Chemistry"
 format: html
 editor: visual
 execute: 
@@ -67,7 +67,8 @@ lef_graph <- ggplot(data = tidy_data, aes(x = year_month, y = mean_measurement, 
        color = "Site") 
 lef_graph
 
-ggsave(filename = "lef_streamwater.png", width = 20, height = 10)
+#ggsave(filename = "lef_streamwater.png", width = 20, height = 10)
+#uncomment to same lef_graph
 ```
 
 ## Bisley Rain
