@@ -1,5 +1,8 @@
 # A1_GroupProject
 
+![265110365-d9f5fc5c-a15b-4638-8372-4fe02db4ced9](https://github.com/katleyq/A1_GroupProject/assets/53875361/392fe62f-1596-4738-82d4-1837a3adc9cc)
+
+
 ## Goal 
 
 Part 1: We recreated the LEF LTER Stream Water Chemistry plot with updated data recordings.
