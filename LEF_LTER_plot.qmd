@@ -56,4 +56,6 @@ lef_graph <- ggplot(data = tidy_data, aes(x = year_month, y = mean_measurement, 
        title = "Luquillo Mountains: Streamwater Chemistry",
        color = "Site") 
 lef_graph
+
+ggsave(filename = "lef_streamwater.png", width = 20, height = 10)
 ```

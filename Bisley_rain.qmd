@@ -34,7 +34,7 @@ tidy_rain <- rain_data |>
 ```{r}
 rain_graph <- ggplot(data = tidy_rain, aes(x = year_month, y = mean_measurement)) +
   geom_line() +
-  geom_vline(xintercept = as.numeric(tidy_data$year_month[1989-08-01]), linetype = "dotted", color = "black") +
+  geom_vline(xintercept = as.Date("1989-09-18"), linetype = "dotted", color = "black") +
   facet_wrap(~chemical,
              labeller = as_labeller(c(k =" K (mg/L)",
                                       no3_n = "N03-N (ug/L)")) ,
