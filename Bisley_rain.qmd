@@ -42,7 +42,7 @@ rain_graph <- ggplot(data = tidy_rain, aes(x = year_month, y = mean_measurement)
              nrow = 2,
              strip.position = "left") +
   ylab(NULL) +
-  theme_minimal() +
+  theme_bw() +
   theme(strip.background = element_blank(),
         strip.placement = "outside") +
   scale_color_paletteer_d(palette = "ggthemes::colorblind")  +
