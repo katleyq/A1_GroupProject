@@ -1,4 +1,11 @@
 # A1_GroupProject
+
+## Goal 
+
+Part 1: We recreated the LEF LTER Stream Water Chemistry plot with updated data recordings.
+
+Part 2: We used Bisley precipitation data to compare to Luquillo Mountain stream water chemistry data.
+
 ## Group Project Set Up
 
 ### Contributors
